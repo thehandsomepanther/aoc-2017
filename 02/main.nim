@@ -1,7 +1,6 @@
 import streams
 import strutils
 import sequtils
-import posix
 
 proc calcMinMaxChecksum(filepath: string): int =
     var
@@ -14,20 +13,24 @@ proc calcMinMaxChecksum(filepath: string): int =
             var 
                 max = NegInf
                 min = Inf
-                nums = map(splitWhitespace(line), proc(s: string): int = parseInt(s))
+                nums = map(splitWhitespace(line), proc(s: string): float = parseFloat(s))
 
             for i, n in nums:
-                var num = float(n)
-                if num < min:
-                    min = num
+                if n < min:
+                    min = n
 
-                if num > max:
-                    max = num
+                if n > max:
+                    max = n
             
             checksum += max - min
         
         fs.close()
         return int(checksum)
+    else:
+        var e: ref OSError
+        new(e)
+        e.msg = "File is nil"
+        raise e
 
 proc calcDivisibleChecksum(filepath: string): int =
     var
@@ -46,6 +49,11 @@ proc calcDivisibleChecksum(filepath: string): int =
                         denominator = min(nums[i], nums[j])
                     if numerator %% denominator == 0:
                         checksum += numerator /% denominator
+    else:
+        var e: ref OSError
+        new(e)
+        e.msg = "File is nil"
+        raise e
     
     fs.close()
     return checksum
@@ -65,4 +73,4 @@ if testResult != 9:
     echo "Test failed. Expected 9, got ", testResult
 else:
     echo "Test passed! Running on puzzle input"
-    echo "Finla answer: ", calcDivisibleChecksum("02/input.txt")
+    echo "Final answer: ", calcDivisibleChecksum("02/input.txt")
