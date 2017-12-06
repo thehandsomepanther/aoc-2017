@@ -1,3 +1,5 @@
 main
 nimcache
 *.jar
+elm.js
+elm-stuff
