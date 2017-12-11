@@ -35,9 +35,7 @@ def countDupeDupeConfig(bankStr)
     cycles = 0
 
     while !configs[banks.join] do
-        if !configs[banks.join]
-            configs[banks.join] = cycles
-        end
+        configs[banks.join] = cycles
         
         _, i = banks.each_with_index.reduce([0, 0]) do |(maxValue, maxIndex), (val, index)|
             if val > maxValue
