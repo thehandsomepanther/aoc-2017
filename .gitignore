@@ -3,3 +3,4 @@ nimcache
 *.jar
 elm.js
 elm-stuff
+target
