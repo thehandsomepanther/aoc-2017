@@ -7,3 +7,14 @@ list of resources i used to learn:
 - [Nim](https://nim-by-example.github.io)
 - [Kotlin](https://try.kotlinlang.org/#/Kotlin%20Koans/Introduction/Hello,%20world!/Task.kt)
 - [Elixir](https://elixirschool.com/en/)
+- [Swift]()
+- [Ruby]()
+- [Scala]()
+- [Lua](https://www.lua.org/pil/contents.html)
+
+languages yet to try
+- smalltalk
+- clojure
+- rust
+- haskell
+- hack
