@@ -11,6 +11,7 @@ list of resources i used to learn:
 - [Ruby]()
 - [Scala]()
 - [Lua](https://www.lua.org/pil/contents.html)
+- [Clojure](https://clojuredocs.org)
 
 languages yet to try
 - smalltalk
