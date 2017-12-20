@@ -15,7 +15,6 @@ list of resources i used to learn:
 
 languages yet to try
 - smalltalk
-- clojure
 - rust
 - haskell
 - hack
